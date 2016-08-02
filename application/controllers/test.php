@@ -17,7 +17,7 @@ class test extends CI_Controller {
         $this->load->model('_model');
 
         $param['db'] = 'report';
-        $param['sql'] = 'select * from sy_group';
+        $param['sql'] = 'select * from report_user';
         $data = $this->_model->getDBData($param);
 
         //这里我添加一些东西
@@ -31,7 +31,12 @@ class test extends CI_Controller {
                 }
             }
         }
-        
+        $this->load->library('calendar');
+        echo $this->calendar->generate();
+        $this->load->helper('url');
+
+        echo base_url("views/js");
+        echo current_url();
         $this->tpl->assign("title",$title);
         $this->tpl->assign("data",$data);
         $this->tpl->display('test.tpl');
