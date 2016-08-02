@@ -19,9 +19,9 @@ class test extends CI_Controller {
         $param['db'] = 'report';
         $param['sql'] = 'select * from sy_group';
         $data = $this->_model->getDBData($param);
-       // var_dump($data);
-       // var_dump($data);
-       // var_dump($data);
+
+        //这里我添加一些东西
+        //这里我添加一些东西
         //这里我添加一些东西
         $title = [];
         foreach ($data as $item) {
