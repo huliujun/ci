@@ -10,18 +10,28 @@
 <style>
     #pane1 {
         position: relative;
-        width:100px;
-        height:100px;
-        border:1px solid #0000cc;
-        background: #5a0099;
         cursor: pointer;
     }
 </style>
 
 <body>
+
+<form method="post" action="<{htmlspecialchars($vaa)}>">
+    <a href="test" name="down" value ="123">下载 </a>
+<input type="submit" name="down" value="下载">
+    <select   name="db" style="width:100px;height: 30px;" >
+        <{foreach from=$db item=v key=k}>
+    <option value="<{$k}>" <{if "$k" eq $where['db']}>selected<{/if}>><{$v}></option>
+        <{/foreach}>
+    </select>
+
+    <input type="submit" name="213" value="确定">
+
+
+
 <div id="pane1">
-    
-</div>
+
+
 <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
@@ -46,6 +56,7 @@
         <{/foreach}>
     </tbody>
 </table>
+</div>
 <script>
     $(function(){
         $('#pane1').click(function(){
@@ -53,6 +64,6 @@
         });
     });
 </script>
-
+</form>
 </body>
 </html>

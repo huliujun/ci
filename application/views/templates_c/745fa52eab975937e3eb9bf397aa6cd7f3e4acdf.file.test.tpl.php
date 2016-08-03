@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-02 11:24:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-03 14:41:36
          compiled from "D:\wamp\www\test\application\views\templates\test.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:90035799a3f7810463-02251838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '745fa52eab975937e3eb9bf397aa6cd7f3e4acdf' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\test.tpl',
-      1 => 1470129861,
+      1 => 1470228095,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5799a3f7885765_48132833',
   'variables' => 
   array (
+    'vaa' => 0,
+    'db' => 0,
+    'k' => 0,
+    'where' => 0,
+    'v' => 0,
     'title' => 0,
     'item' => 0,
     'data' => 0,
-    'k' => 0,
     'value' => 0,
   ),
   'has_nocache_code' => false,
@@ -41,18 +45,37 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <style>
     #pane1 {
         position: relative;
-        width:100px;
-        height:100px;
-        border:1px solid #0000cc;
-        background: #5a0099;
         cursor: pointer;
     }
 </style>
 
 <body>
+
+<form method="post" action="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['vaa']->value);?>
+">
+    <a href="test" name="down" value ="123">下载 </a>
+<input type="submit" name="down" value="下载">
+    <select   name="db" style="width:100px;height: 30px;" >
+        <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['db']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
+$_smarty_tpl->tpl_vars['v']->_loop = true;
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
+?>
+    <option value="<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
+" <?php if (((string)$_smarty_tpl->tpl_vars['k']->value)==$_smarty_tpl->tpl_vars['where']->value['db']) {?>selected<?php }?>><?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+</option>
+        <?php } ?>
+    </select>
+
+    <input type="submit" name="213" value="确定">
+
+
+
 <div id="pane1">
-    
-</div>
+
+
 <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
@@ -93,6 +116,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
         <?php } ?>
     </tbody>
 </table>
+</div>
 <?php echo '<script'; ?>
 >
     $(function(){
@@ -102,6 +126,6 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     });
 <?php echo '</script'; ?>
 >
-
+</form>
 </body>
 </html><?php }} ?>
