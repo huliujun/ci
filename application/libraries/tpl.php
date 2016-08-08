@@ -12,7 +12,7 @@
 // Require the Smarty class from our third_party directory.
 require_once APPPATH . 'libraries/smarty/Smarty.class.php';
 
-class tpl extends Smarty {
+class Tpl extends Smarty {
 
     /**
      * Constructor!

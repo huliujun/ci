@@ -19,11 +19,12 @@
 <form method="post" action="<{htmlspecialchars($vaa)}>">
     <a href="test" name="down" value ="123">下载 </a>
 <input type="submit" name="down" value="下载">
-    <select   name="db" style="width:100px;height: 30px;" >
-        <{foreach from=$db item=v key=k}>
-    <option value="<{$k}>" <{if "$k" eq $where['db']}>selected<{/if}>><{$v}></option>
+    <select   name="table" style="width:100px;height: 30px;" >
+        <{foreach from=$data.table item=v key=k}>
+    <option value="<{$v}>" <{if "$v" eq $data.where.table}>selected<{/if}>><{$v}></option>
         <{/foreach}>
     </select>
+
 
     <input type="submit" name="213" value="确定">
 
@@ -37,7 +38,7 @@
     <thead >
     <tr>
 
-        <{foreach from=$title item=item}>
+        <{foreach from=$data.data.title item=item}>
         <td >
             <a href="javascript:void" style="color:#0000cc;"><{$item}></a>
         </td>
@@ -47,9 +48,9 @@
     </thead>
     <!--  table头加 排序 结束-->
     <tbody>
-    <{foreach from=$data item=value  }>
+    <{foreach from=$data.data.data item=value  }>
         <tr>
-            <{foreach from=$title item=v key=k }>
+            <{foreach from=$data.data.title item=v key=k }>
             <td style="text-align:center; border:1px solid #ddd"><{$value.$k}> </td>
             <{/foreach}>
         </tr>

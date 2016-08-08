@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-03 14:41:36
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-08 06:59:23
          compiled from "D:\wamp\www\test\application\views\templates\test.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:90035799a3f7810463-02251838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '745fa52eab975937e3eb9bf397aa6cd7f3e4acdf' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\test.tpl',
-      1 => 1470228095,
+      1 => 1470632359,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'vaa' => 0,
-    'db' => 0,
-    'k' => 0,
-    'where' => 0,
-    'v' => 0,
-    'title' => 0,
-    'item' => 0,
     'data' => 0,
+    'v' => 0,
+    'item' => 0,
+    'k' => 0,
     'value' => 0,
   ),
   'has_nocache_code' => false,
@@ -55,16 +52,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
     <a href="test" name="down" value ="123">下载 </a>
 <input type="submit" name="down" value="下载">
-    <select   name="db" style="width:100px;height: 30px;" >
+    <select   name="table" style="width:100px;height: 30px;" >
         <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['db']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['data']->value['table']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
 $_smarty_tpl->tpl_vars['v']->_loop = true;
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
 ?>
-    <option value="<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
-" <?php if (((string)$_smarty_tpl->tpl_vars['k']->value)==$_smarty_tpl->tpl_vars['where']->value['db']) {?>selected<?php }?>><?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+    <option value="<?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+" <?php if (((string)$_smarty_tpl->tpl_vars['v']->value)==$_smarty_tpl->tpl_vars['data']->value['where']['table']) {?>selected<?php }?>><?php echo $_smarty_tpl->tpl_vars['v']->value;?>
 </option>
         <?php } ?>
     </select>
@@ -82,7 +79,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     <tr>
 
         <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['title']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['data']->value['data']['title']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 ?>
@@ -97,14 +94,14 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
     <!--  table头加 排序 结束-->
     <tbody>
     <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['data']->value['data']['data']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
         <tr>
             <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['title']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['data']->value['data']['title']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
 $_smarty_tpl->tpl_vars['v']->_loop = true;
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
