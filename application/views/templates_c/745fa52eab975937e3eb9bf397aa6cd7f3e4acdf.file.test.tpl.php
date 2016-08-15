@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-08 06:59:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-15 09:52:01
          compiled from "D:\wamp\www\test\application\views\templates\test.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:90035799a3f7810463-02251838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '745fa52eab975937e3eb9bf397aa6cd7f3e4acdf' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\test.tpl',
-      1 => 1470632359,
+      1 => 1471247519,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5799a3f7885765_48132833',
   'variables' => 
   array (
-    'vaa' => 0,
     'data' => 0,
     'v' => 0,
     'item' => 0,
@@ -28,31 +27,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5799a3f7885765_48132833')) {function content_5799a3f7885765_48132833($_smarty_tpl) {?><!DOCTYPE >
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <?php echo '<script'; ?>
- type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"><?php echo '</script'; ?>
->
-    <title>demo</title>
-</head>
-
-
-<style>
-    #pane1 {
-        position: relative;
-        cursor: pointer;
-    }
-</style>
-
-<body>
-
-<form method="post" action="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['vaa']->value);?>
-">
-    <a href="test" name="down" value ="123">下载 </a>
+<?php if ($_valid && !is_callable('content_5799a3f7885765_48132833')) {function content_5799a3f7885765_48132833($_smarty_tpl) {?>
+<div id="allpage">
+<a href="test" name="down" value ="123">下载 </a>
 <input type="submit" name="down" value="下载">
-    <select   name="table" style="width:100px;height: 30px;" >
+    <select id="select_table"  name="table" style="width:100px;height: 30px;" >
         <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['data']->value['table']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -66,18 +45,27 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
         <?php } ?>
     </select>
 
-    <input type="submit" name="213" value="确定">
 
-
+    <input id="click_submit" type="button" name="213" value="确定">
+    <?php echo '<script'; ?>
+>
+        $('#click_submit').click(function () {
+            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+            $.post('/test/index',{
+                table:$('#select_table').val(),
+            },function(data){
+               //console.log(data);
+                $('#allpage').html(data);
+            });
+        });
+    <?php echo '</script'; ?>
+>
 
 <div id="pane1">
-
-
 <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
-
         <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['data']->value['data']['title']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
@@ -123,6 +111,5 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     });
 <?php echo '</script'; ?>
 >
-</form>
-</body>
-</html><?php }} ?>
+</div>
+<?php }} ?>

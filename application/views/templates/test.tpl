@@ -1,43 +1,32 @@
-<!DOCTYPE >
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"></script>
-    <title>demo</title>
-</head>
 
-
-<style>
-    #pane1 {
-        position: relative;
-        cursor: pointer;
-    }
-</style>
-
-<body>
-
-<form method="post" action="<{htmlspecialchars($vaa)}>">
-    <a href="test" name="down" value ="123">下载 </a>
+<div id="allpage">
+<a href="test" name="down" value ="123">下载 </a>
 <input type="submit" name="down" value="下载">
-    <select   name="table" style="width:100px;height: 30px;" >
+    <select id="select_table"  name="table" style="width:100px;height: 30px;" >
         <{foreach from=$data.table item=v key=k}>
     <option value="<{$v}>" <{if "$v" eq $data.where.table}>selected<{/if}>><{$v}></option>
         <{/foreach}>
     </select>
 
 
-    <input type="submit" name="213" value="确定">
-
-
+    <input id="click_submit" type="button" name="213" value="确定">
+    <script>
+        $('#click_submit').click(function () {
+            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+            $.post('/test/index',{
+                table:$('#select_table').val(),
+            },function(data){
+               //console.log(data);
+                $('#allpage').html(data);
+            });
+        });
+    </script>
 
 <div id="pane1">
-
-
 <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
-
         <{foreach from=$data.data.title item=item}>
         <td >
             <a href="javascript:void" style="color:#0000cc;"><{$item}></a>
@@ -65,6 +54,4 @@
         });
     });
 </script>
-</form>
-</body>
-</html>
+</div>

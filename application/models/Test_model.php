@@ -24,7 +24,7 @@ class Test_model extends CI_Model{
     }
     
     function getItemData(){
-        $param['db'] = 'report';
+        $param['db'] = 'my_db';
         $where = $this->where;
         $table = $where['table'];
         $param['sql'] = "select * from $table";
@@ -45,16 +45,16 @@ class Test_model extends CI_Model{
     
     function getWhere(){
         $def = $this->input->post('table');
-        $where['table'] =isset($def)?$def:'report_file';
+        $where['table'] =isset($def)?$def:'con';
         return $where;
     }
     
     function getTable(){
-        $param['db'] = 'report';
+        $param['db'] = 'my_db';
         $param['sql'] = 'show tables';
         $res = $this->s_model->getDBData($param);
         foreach ($res as $v) {
-            $table[]= $v['Tables_in_report'];
+            $table[]= $v['Tables_in_my_db'];
         }
         return $table;
     }

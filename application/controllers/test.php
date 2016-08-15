@@ -36,4 +36,33 @@ class Test extends CI_Controller {
         $this->tpl->display('test.tpl');
     }
 
+
+    function index1() {
+        echo 'welcome to ci study system';
+    }
+
+
+    public function array_sort($arr, $keys, $type='asc'){
+        $keysvalue = $new_array = array();
+        foreach ($arr as $k=>$v){
+            $keysvalue[$k] = isset($v[$keys]) ? trim($v[$keys]) : 0;
+        }
+        if(strtolower($type) == 'asc'){
+            asort($keysvalue);
+        }else{
+            arsort($keysvalue);
+        }
+        reset($keysvalue);
+        foreach ($keysvalue as $k=>$v){
+
+                $new_array[$k] = $arr[$k];
+        }
+        return $new_array;
+    }
+    
+    
+    
+
+
+
 }
