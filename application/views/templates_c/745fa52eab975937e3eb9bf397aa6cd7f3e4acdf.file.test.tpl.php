@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-15 09:52:01
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-08-15 08:11:49
          compiled from "D:\wamp\www\test\application\views\templates\test.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:90035799a3f7810463-02251838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2115357b155dac63ba7-64180236%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '745fa52eab975937e3eb9bf397aa6cd7f3e4acdf' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\test.tpl',
-      1 => 1471247519,
+      1 => 1471241504,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '90035799a3f7810463-02251838',
+  'nocache_hash' => '2115357b155dac63ba7-64180236',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5799a3f7885765_48132833',
+  'unifunc' => 'content_57b155dae0e4b7_92986327',
   'variables' => 
   array (
     'data' => 0,
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5799a3f7885765_48132833')) {function content_5799a3f7885765_48132833($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_57b155dae0e4b7_92986327')) {function content_57b155dae0e4b7_92986327($_smarty_tpl) {?>
 <div id="allpage">
 <a href="test" name="down" value ="123">下载 </a>
 <input type="submit" name="down" value="下载">
@@ -61,8 +61,8 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     <?php echo '</script'; ?>
 >
 
-<div id="pane1">
-<table class="table"  >
+    <div id="pane1">
+    <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
@@ -100,14 +100,49 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
         </tr>
         <?php } ?>
     </tbody>
-</table>
-</div>
+    </table>
+    </div>
+    <div id="pageSize">
+
+        <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['data']->value['page']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value) {
+$_smarty_tpl->tpl_vars['v']->_loop = true;
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
+?>
+        <label>
+            <input type="radio" class="page_class_<?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+" name="page" value="<?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+
+        </label>
+        <?php echo '<script'; ?>
+>
+            $('.page_class_<?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+').click(function(){
+                $.post('/test/index',{
+                    table:$('#select_table').val(),
+                    page:$('.page_class_<?php echo $_smarty_tpl->tpl_vars['v']->value;?>
+').val(),
+                },function(data){
+                    //console.log(data);
+                    $('#allpage').html(data);
+                });
+            });
+        <?php echo '</script'; ?>
+>
+        <?php } ?>
+
+    </div>
+
 <?php echo '<script'; ?>
 >
     $(function(){
         $('#pane1').click(function(){
             $(this).animate({left:"500px"},3000);
         });
+
     });
 <?php echo '</script'; ?>
 >

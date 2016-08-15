@@ -55,6 +55,7 @@
                     $('#c_r_<{$i.id}>').click(function () {
                         $.post('<{$i.filepath}>',{
                         },function(data){
+                            console.log(123);
                             $('#ajaxnode').html(data);
                         });
                     });

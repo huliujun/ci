@@ -22,8 +22,8 @@
         });
     </script>
 
-<div id="pane1">
-<table class="table"  >
+    <div id="pane1">
+    <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
@@ -45,8 +45,29 @@
         </tr>
         <{/foreach}>
     </tbody>
-</table>
-</div>
+    </table>
+    </div>
+    <div id="pageSize">
+
+        <{foreach from=$data.page item=v key=k}>
+        <label>
+            <input type="radio" class="page_class_<{$v}>" name="page" value="<{$v}>"><{$v}>
+        </label>
+        <script>
+            $('.page_class_<{$v}>').click(function(){
+                $.post('/test/index',{
+                    table:$('#select_table').val(),
+                    page:$('.page_class_<{$v}>').val(),
+                },function(data){
+                    //console.log(data);
+                    $('#allpage').html(data);
+                });
+            });
+        </script>
+        <{/foreach}>
+        <input name="pageSize" >
+    </div>
+
 <script>
     $(function(){
         $('#pane1').click(function(){

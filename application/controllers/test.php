@@ -29,9 +29,11 @@ class Test extends CI_Controller {
 //        }if ($down2){
 //            force_download('123.txt','woshi yige meimei');
 //        }
+
+
         $vaa = $_SERVER["PHP_SELF"];
         $data = $this->test_model->getData();
-        $this->tpl->assign("vaa",$vaa);
+        //$this->tpl->assign("page_aa",$page);
         $this->tpl->assign("data",$data);
         $this->tpl->display('test.tpl');
     }

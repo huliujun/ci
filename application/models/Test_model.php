@@ -15,11 +15,12 @@ class Test_model extends CI_Model{
     }
     
     function getData() {
-       
+
        return [
            'where'=>$this->where,
            'data'=>$this->getItemData(),
-           'table'=>$this->getTable()
+           'table'=>$this->getTable(),
+           'page'=>$this->getPage($this->where)
        ];
     }
     
@@ -27,7 +28,10 @@ class Test_model extends CI_Model{
         $param['db'] = 'my_db';
         $where = $this->where;
         $table = $where['table'];
-        $param['sql'] = "select * from $table";
+        $page = $where['page'];
+        //var_dump($table);
+        $param['sql'] = "select * from $table limit $page, 5";
+        //var_dump($param['sql']);
         $res = $this->s_model->getDBData($param);
         $title = [];
         foreach ($res as $item) {
@@ -45,8 +49,27 @@ class Test_model extends CI_Model{
     
     function getWhere(){
         $def = $this->input->post('table');
+        $def1 = $this->input->post('page');
         $where['table'] =isset($def)?$def:'con';
+        $where['page'] =isset($def1)?$def1:'1';
+
         return $where;
+    }
+
+    function getRows($where){
+        $db = $this->load->database('my_db',true);
+        $query = $db->query('SELECT * FROM '.$where['table']);
+        return $query->num_rows();
+    }
+
+    function getPage($where){
+        $rows = $this->getRows($where);
+        $page = $rows/5;
+        $data = [];
+        for($i = 1;$i <= $page;$i++){
+            $data[] = $i;
+        }
+        return $data;
     }
     
     function getTable(){
