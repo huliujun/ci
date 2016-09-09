@@ -1,0 +1,9 @@
+/* tooltip提示title */
+#tooltip{
+    position:absolute;
+    border-radius: 5px;
+    background:#5e5e5e;
+    padding:1px;
+    color:#f5f5f5;
+    display:none;
+}

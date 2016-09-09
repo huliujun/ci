@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$query_builder = false;
+$query_builder = true;
 $database = ['report','my_db','config','ci_db'];
 foreach ($database as $v){
 	$db[$v] = array(

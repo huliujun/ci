@@ -3,6 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/application/views/js/common.js"></script>
+    <script type="text/javascript" src="/application/views/js/jquery.form.js"></script>
+    <!--link rel="stylesheet" type="text/css" href="/application/views/js/bootstrap.min.css" /-->
+    <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/application/views/css/style.css" />
     <title>demo</title>
 </head>
 <style>
@@ -28,18 +33,19 @@
         float: left;
         height: auto;
         margin-top: 20px;
-        width: 200px;
+        width: 10%;
     }
     .table-box {
         float: left;
         margin-left: 20px;
         margin-top: 20px;
-        min-height: 1200px;
+        min-height: 500px;
         min-width: 400px;
     }
 </style>
 
 <body>
+<div style="min-width: 1000px">
 <div class="menu-box">
     <table>
         <thead>
@@ -77,18 +83,19 @@
     </script>
 </div>
 
-<div class="table-box" style="height: auto; width: 1313px;">
+<div class="table-box" style="height: auto; width: 75%;">
 
     <div id="ajaxnode">
 
     </div>
     <script>
         $('#ajaxnode').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
-        $.post('/test/index1',{
+        $.post('/test',{
         },function(data){
             $('#ajaxnode').html(data);
         });
     </script>
+</div>
 </div>
 </body>
 </html>

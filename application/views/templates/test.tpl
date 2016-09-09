@@ -1,14 +1,17 @@
 
 <div id="allpage">
-<a href="test" name="down" value ="123">下载 </a>
-<input type="submit" name="down" value="下载">
+
+    <form id="my_form" enctype="multipart/form-data" action="test" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="MAX_FILE_SIZE" value="170000">
+        <input type="hidden" name="is_import" value="1">
+        <input name="myFile" type="file" id="up_load">
+    </form>
+
     <select id="select_table"  name="table" style="width:100px;height: 30px;" >
-        <{foreach from=$data.table item=v key=k}>
-    <option value="<{$v}>" <{if "$v" eq $data.where.table}>selected<{/if}>><{$v}></option>
+        <{foreach from=$table item=v key=k}>
+    <option value="<{$v}>" <{if "$v" eq $where.table}>selected<{/if}>><{$v}></option>
         <{/foreach}>
     </select>
-
-
     <input id="click_submit" type="button" name="213" value="确定">
     <script>
         $('#click_submit').click(function () {
@@ -20,14 +23,41 @@
                 $('#allpage').html(data);
             });
         });
+        $('#up_load').on('change',function () {
+            var options = {
+                success : dosuccess
+            };
+
+            $('#my_form').ajaxForm(options);
+
+            function dosuccess(responseText)
+            {
+                $('#allpage').html(responseText);
+            }
+            $('#my_form').submit();
+        });
     </script>
 
-    <div id="pane1">
+    <div  class="cal-box" style="width:auto; padding-top:2px;height: 40px;line-height: 40px ; float:right; margin-right: 10px">
+        <a type="button" class="btn btn-default" id="excel_btn1">导出excel</a>
+    </div>
+
+    <script>
+        //导出excel
+        $('#excel_btn1').click(function(){
+            var obj = get_post_args();
+            obj.download = 1;
+            console.log(obj);
+            create_form_v5('test/index',obj);
+        });
+    </script>
+
+    <div >
     <table class="table"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
-        <{foreach from=$data.data.title item=item}>
+        <{foreach from=$data.title item=item}>
         <td >
             <a href="javascript:void" style="color:#0000cc;"><{$item}></a>
         </td>
@@ -37,21 +67,21 @@
     </thead>
     <!--  table头加 排序 结束-->
     <tbody>
-    <{foreach from=$data.data.data item=value  }>
+    <{foreach from=$data.data item=value  }>
         <tr>
-            <{foreach from=$data.data.title item=v key=k }>
-            <td style="text-align:center; border:1px solid #ddd"><{$value.$k}> </td>
+            <{foreach from=$data.title item=v key=k }>
+            <td class="tooltip" title="<{$value.$k}>" style="text-align:center; border:1px solid #ddd"><{$value.$k}> </td>
             <{/foreach}>
         </tr>
         <{/foreach}>
     </tbody>
     </table>
     </div>
-    <div id="pageSize">
+    <div id="pageSize" class="btn-group kpi-nav-one" data-toggle="buttons">
+        <{foreach from=$page item=v key=k}>
 
-        <{foreach from=$data.page item=v key=k}>
-        <label>
-            <input type="radio" class="page_class_<{$v}>" name="page" value="<{$v}>"><{$v}>
+        <label class="btn btn-default <{if $where.page eq $v}>active<{/if}> " >
+            <input type="radio" class="page_class_<{$v}>" name="page" <{if $where.page eq $v}>checked<{/if}> value="<{$v}>"><{$v}>
         </label>
         <script>
             $('.page_class_<{$v}>').click(function(){
@@ -65,7 +95,6 @@
             });
         </script>
         <{/foreach}>
-        <input name="pageSize" >
     </div>
 
 <script>
@@ -73,6 +102,8 @@
         $('#pane1').click(function(){
             $(this).animate({left:"500px"},3000);
         });
+        fun.show_title('tooltip');
     });
 </script>
 </div>
+

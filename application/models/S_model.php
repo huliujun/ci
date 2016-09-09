@@ -11,9 +11,12 @@ class S_model extends CI_Model {
     {
         parent::__construct();
     }
-    function getDBData($param) {
-        $this->db = $this->load->database($param['db'],true,null);
-        $res = $this->db->query($param['sql'])->result_array();
+    function query($db,$sql,$type='select') {
+        $this->db = $this->load->database($db,true,null);
+        if ($type != 'select')
+            $res = $this->db->query($sql);
+        else
+            $res = $this->db->query($sql)->result_array();
         return $res;
     }
 
