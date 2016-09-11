@@ -10,7 +10,6 @@ class Test_model extends CI_Model{
     function __construct()
     {
         parent::__construct();
-        $this->load->model('s_model');
         $this->where = $this->getWhere();
     }
 
@@ -29,7 +28,7 @@ class Test_model extends CI_Model{
         $table = $where['table'];
         $page = ($where['page']-1)*5;
         $sql = "select * from $table limit $page, 5";
-        $res = $this->s_model->query('my_db',$sql);
+        $res = query('my_db',$sql);
         $title = [];
         foreach ($res as $item) {
             if ($item){
@@ -49,13 +48,13 @@ class Test_model extends CI_Model{
     }
 
     public function importData(){
-        $this->load->helper('fun');
+
 
         if (isset($_POST['is_import']) and $_POST['is_import']){
-            $arr = excel_get_array($_FILES,0,true);
 
+            $arr = excel_get_array($_FILES,0,true);
             array_shift($arr);
-            //var_dump($arr);die;
+            var_dump($arr);die;
 
             foreach($arr as $k=>$v)
             {
@@ -119,7 +118,7 @@ class Test_model extends CI_Model{
 
     function getRows($where){
         $sql = 'SELECT * FROM '.$where['table'];
-        $res = $this->s_model->query('my_db',$sql,1)->num_rows();
+        $res = query('my_db',$sql,1)->num_rows();
         return $res;
     }
 
@@ -134,7 +133,7 @@ class Test_model extends CI_Model{
     }
 
     function getTable(){
-        $res = $this->s_model->query('my_db','show tables');
+        $res = query('my_db','show tables');
         foreach ($res as $v) {
             $table[]= $v['Tables_in_my_db'];
         }

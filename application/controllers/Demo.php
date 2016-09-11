@@ -12,5 +12,6 @@ class Demo extends CI_Controller{
 
     function foo(){
         echo 'demo foo';
+        $this->tpl->display('animate.tpl');
     }
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-09 15:11:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-11 10:25:10
          compiled from "D:\wamp\www\test\application\views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1249757c21118b03234-67994412%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'edf097218bfe915c6fcf05c420602c43146bf6e9' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\home.tpl',
-      1 => 1473426591,
+      1 => 1473581202,
       2 => 'file',
     ),
   ),
@@ -44,39 +44,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="stylesheet" type="text/css" href="/application/views/css/style.css" />
     <title>demo</title>
 </head>
-<style>
-    #pane1 {
-        position: relative;
-        cursor: pointer;
-    }
-    .sparent {
-        cursor: pointer;
-    }
-    .parent {
-        background-color: #2e8ece;
-    }
-    .loading {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-    }
-    .menu-box {
-        float: left;
-        height: auto;
-        margin-top: 20px;
-        width: 10%;
-    }
-    .table-box {
-        float: left;
-        margin-left: 20px;
-        margin-top: 20px;
-        min-height: 500px;
-        min-width: 400px;
-    }
-</style>
 
 <body>
 <div style="min-width: 1000px">

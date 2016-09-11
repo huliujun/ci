@@ -10,39 +10,6 @@
     <link rel="stylesheet" type="text/css" href="/application/views/css/style.css" />
     <title>demo</title>
 </head>
-<style>
-    #pane1 {
-        position: relative;
-        cursor: pointer;
-    }
-    .sparent {
-        cursor: pointer;
-    }
-    .parent {
-        background-color: #2e8ece;
-    }
-    .loading {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-    }
-    .menu-box {
-        float: left;
-        height: auto;
-        margin-top: 20px;
-        width: 10%;
-    }
-    .table-box {
-        float: left;
-        margin-left: 20px;
-        margin-top: 20px;
-        min-height: 500px;
-        min-width: 400px;
-    }
-</style>
 
 <body>
 <div style="min-width: 1000px">

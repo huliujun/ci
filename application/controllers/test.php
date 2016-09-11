@@ -12,24 +12,10 @@ class Test extends CI_Controller {
         parent::__construct();
     }
 
-    
     function index(){
         $this->load->model('test_model');
-        $this->load->library('pagination');
-
-        $config['base_url'] = 'http://test.com/test/';
-        $config['total_rows'] = 200;
-        $config['per_page'] = 20;
-        $config['enable_query_strings'] = true;
-        $config['page_query_string'] = true;
-
-        $this->pagination->initialize($config);
-        $page = $this->pagination->create_links();
-
-        $data = $this->test_model->getData();
         $this->test_model->importData();
-        $this->tpl->assign("page_aa",$page);
-        $this->tpl->assign($data);
+        $this->tpl->assign($this->test_model->getData());
         $this->tpl->display('test.tpl');
     }
 
@@ -82,6 +68,19 @@ class Test extends CI_Controller {
     }
 
     function abc(){
+
+        $this->load->library('pagination');
+
+        $config['base_url'] = 'http://test.com/test/';
+        $config['total_rows'] = 200;
+        $config['per_page'] = 20;
+        $config['enable_query_strings'] = true;
+        $config['page_query_string'] = true;
+
+        $this->pagination->initialize($config);
+        $page = $this->pagination->create_links();
+
+
         //        $this->load->library('calendar');
 //        echo $this->calendar->generate();
 //        $this->load->helper('url');

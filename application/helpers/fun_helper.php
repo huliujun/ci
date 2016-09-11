@@ -12,7 +12,6 @@ function show($str){
 
 /**
  * Create array from excel
- *
  * @param mixed $path       路径
  * @param boolean $sheet    第几个sheet
  * @param boolean $echo     输出几行几列
@@ -39,4 +38,14 @@ function excel_get_array($path,$sheet = 0,$echo = false){
 
     $dataArr = $currentSheet->toArray(null, true, true, true);
     return $dataArr;
+}
+
+function query($db,$sql,$type='select') {
+    $ci_model = new CI_Model;
+    $database = $ci_model->load->database($db,true,null);
+    if ($type != 'select')
+        $res = $database->query($sql);
+    else
+        $res = $database->query($sql)->result_array();
+    return $res;
 }
