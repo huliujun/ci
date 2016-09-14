@@ -299,7 +299,7 @@ var fun = {
 	show_title:function(title_class){
 		var x = 10;
 		var y = 20;
-		$("."+title_class).mouseover(function(e){
+		$("#"+title_class).mouseover(function(e){
 			this.myTitle = this.title;
 			this.title = "";
 			var tooltip = "<div id='tooltip'>"+ this.myTitle +"<\/div>"; //创建 div 元素

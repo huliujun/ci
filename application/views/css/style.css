@@ -54,7 +54,7 @@ tbody tr:nth-child(2n){
 /*Header Bar style*/
 .top-box{
 	height: 50px;
-	background: url(../images/backg.png);
+	background: url(../img/backg.png);
 }
 
 .top-box .logo{
@@ -79,7 +79,7 @@ tbody tr:nth-child(2n){
 
 /*中间部分*/
 .middle-box{
-	background:url(../images/backg.png) 0 -60px;
+	background:url(../img/backg.png) 0 -60px;
 	height: 60px;
 	text-align: center;
 }
@@ -96,7 +96,7 @@ tbody tr:nth-child(2n){
 	overflow: hidden;
 	width:25px;
 	height: 20px;
-	background:url(../images/icon.png);
+	background:url(../img/icon.png);
 	margin-left:27px;
 }
 .middle-box a .tab-two{
@@ -104,7 +104,7 @@ tbody tr:nth-child(2n){
 	overflow: hidden;
 	width:25px;
 	height: 20px;
-	background:url(../images/icon.png) 0 -25px;
+	background:url(../img/icon.png) 0 -25px;
 	margin-left:27px;
 }
 .middle-box a .tab-three
@@ -113,7 +113,7 @@ tbody tr:nth-child(2n){
 	overflow: hidden;
 	width:25px;
 	height: 20px;
-	background:url(../images/icon.png) 0 -50px;
+	background:url(../img/icon.png) 0 -50px;
 	margin-left:27px;
 }
 
@@ -242,67 +242,67 @@ tbody tr:nth-child(2n){
 }
 /*图标*/
 .nav-item span .item-1{
-	background: url(../images/icon.png) 0 -98px;
+	background: url(../img/icon.png) 0 -98px;
 }
 .nav-item span .item-2{
-	background: url(../images/icon.png) 0 -265px;
+	background: url(../img/icon.png) 0 -265px;
 }
 
 .nav-item span .item-3{
-	background: url(../images/icon.png) 0 -1275px;
+	background: url(../img/icon.png) 0 -1275px;
 }
 
 .nav-item span .item-4{
-	background: url(../images/icon.png) 0 -386px;
+	background: url(../img/icon.png) 0 -386px;
 }
 .nav-item span .item-5{
-	background: url(../images/icon.png) 0 -217px;
+	background: url(../img/icon.png) 0 -217px;
 }
 .nav-item span .item-6{
-	background: url(../images/icon.png) 0 -363px;
+	background: url(../img/icon.png) 0 -363px;
 }
 .nav-item span .item-7{
-	background: url(../images/icon.png) 0 -242px;
+	background: url(../img/icon.png) 0 -242px;
 }
 
 .nav-item span .item-8{
-	background: url(../images/icon.png) 0 -602px;
+	background: url(../img/icon.png) 0 -602px;
 }
 .nav-item span .item-9{
-	background: url(../images/icon.png) 0 -458px;
+	background: url(../img/icon.png) 0 -458px;
 }
 
 /*鼠标移动过去的图标*/
 
 .nav-item span .item-1-cur{
-	background: url(../images/icon.png) -23px -98px;
+	background: url(../img/icon.png) -23px -98px;
 }
 .nav-item span .item-2-cur{
-	background: url(../images/icon.png) -23px -265px;
+	background: url(../img/icon.png) -23px -265px;
 }
 
 .nav-item span .item-3-cur{
-	background: url(../images/icon.png) -23px -1275px;
+	background: url(../img/icon.png) -23px -1275px;
 }
 
 .nav-item span .item-4-cur{
-	background: url(../images/icon.png) -23px -386px;
+	background: url(../img/icon.png) -23px -386px;
 }
 .nav-item span .item-5-cur{
-	background: url(../images/icon.png) -23px -217px;
+	background: url(../img/icon.png) -23px -217px;
 }
 .nav-item span .item-6-cur{
-	background: url(../images/icon.png) -23px -363px;
+	background: url(../img/icon.png) -23px -363px;
 }
 .nav-item span .item-7-cur{
-	background: url(../images/icon.png) -23px -242px;
+	background: url(../img/icon.png) -23px -242px;
 }
 
 .nav-item span .item-8-cur{
-	background: url(../images/icon.png) -23px -602px;
+	background: url(../img/icon.png) -23px -602px;
 }
 .nav-item span .item-9-cur{
-	background: url(../images/icon.png) -23px -458px;
+	background: url(../img/icon.png) -23px -458px;
 }
 .cur-on{
 	color:#008386;
@@ -320,7 +320,7 @@ tbody tr:nth-child(2n){
 	margin-left:20px;
 	/*min-width: 1125px;*/
 	min-width: auto;
-	min-height: 1200px
+	min-height: 500px
 }
 .table-box .mod-001{
 	-moz-border-radius-topleft: 8px;
@@ -331,7 +331,7 @@ tbody tr:nth-child(2n){
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	border:1px solid #B4B4B4;
-	background: url(../images/backg.png) 0 -297px;
+	background: url(../img/backg.png) 0 -297px;
 	margin-bottom:5px;
 }
 
@@ -341,7 +341,7 @@ tbody tr:nth-child(2n){
 	line-height: 43px;
 	overflow: hidden;
 	padding:0 23px;
-	/*background: url(../images/backg.png) 0 -297px;*/
+	/*background: url(../img/backg.png) 0 -297px;*/
 	overflow: hidden;
 
 }
@@ -927,7 +927,7 @@ tbody tr:nth-child(2n){
 	height: 45px;
 	line-height: 45px;
 	overflow: hidden;
-	background: url(../images/backg.png) 0 -297px;
+	background: url(../img/backg.png) 0 -297px;
 }
 
 .import-head .search-box{
@@ -2236,19 +2236,19 @@ background-color:#E4E4E4;
    	}
 
    	.tip-box-icon:link{
-   		background:url(../images/icon.png) 1px -530px;
+   		background:url(../img/icon.png) 1px -530px;
    		text-decoration: none;
    	}
    	.tip-box-icon:visited{
-   		background:url(../images/icon.png) 1px -530px;
+   		background:url(../img/icon.png) 1px -530px;
    		text-decoration: none;
    	}
    	.tip-box-icon:active{
-   		background:url(../images/icon.png) 1px -530px;
+   		background:url(../img/icon.png) 1px -530px;
    		text-decoration: none;
    	}
    	.tip-box-icon:hover{
-   		background:url(../images/icon.png) 26px -530px;
+   		background:url(../img/icon.png) 26px -530px;
    		text-decoration: none;
    	}
    	.xiezi{
@@ -2445,12 +2445,12 @@ background-color:#E4E4E4;
 .txtScroll-top{ overflow:hidden; position:relative;  border:1px solid #ccc;   }
 .txtScroll-top .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
 .txtScroll-top .hd .prev,.txtScroll-top .hd .next{ display:block;  width:9px; height:5px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
-	 cursor:pointer; background:url("../images/arrow.png") 0 -100px no-repeat;}
+	 cursor:pointer; background:url("../img/arrow.png") 0 -100px no-repeat;}
 .txtScroll-top .hd .next{ background-position:0 -140px;  }
 .txtScroll-top .hd .prevStop{ background-position:-60px -100px;  }
 .txtScroll-top .hd .nextStop{ background-position:-60px -140px;  }
 .txtScroll-top .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; }
-.txtScroll-top .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/icoCircle.gif") 0 -9px no-repeat; }
+.txtScroll-top .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../img/icoCircle.gif") 0 -9px no-repeat; }
 .txtScroll-top .hd ul li.on{ background-position:0 0; }
 .txtScroll-top .bd{ padding:15px;  }
 .txtScroll-top .infoList li{ height:40px; line-height:40px; border-bottom:1px solid #DDD;  }
@@ -2625,10 +2625,10 @@ background-color:#E4E4E4;
 }
 
 .finance_hide{
-        background: url(../images/show.png) no-repeat;
+        background: url(../img/show.png) no-repeat;
     }
 .finance_show{
-    background: url(../images/hide.png) no-repeat;
+    background: url(../img/hide.png) no-repeat;
 }
 
 #msgdiv .alert,#msgdiv_2 .alert{

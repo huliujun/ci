@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-11 08:38:11
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-14 12:44:58
          compiled from "D:\wamp\www\test\application\views\templates\test.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1003857c2111d0de733-22983429%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '745fa52eab975937e3eb9bf397aa6cd7f3e4acdf' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\test.tpl',
-      1 => 1473575879,
+      1 => 1473849896,
       2 => 'file',
     ),
   ),
@@ -35,11 +35,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <form id="my_form" enctype="multipart/form-data" action="test" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="170000">
-        <input type="hidden" name="is_import" value="1">
+        <input type="hidden" name="is_import" value=0>
         <input name="myFile" type="file" id="up_load">
     </form>
 
-    <select id="select_table"  name="table" style="width:100px;height: 30px;" >
+    <select id="select_table"  name="table" >
         <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['table']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -55,8 +55,8 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     <input id="click_submit" type="button" name="213" value="确定">
     <?php echo '<script'; ?>
 >
-        $('#click_submit').click(function () {
-            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+        $('#select_table').bind('change',function () {
+            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/img/loading7.gif'></div>");
             $.post('/test/index',{
                 table:$('#select_table').val(),
             },function(data){
@@ -65,6 +65,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
             });
         });
         $('#up_load').on('change',function () {
+            $('input[name=is_import]').val(1);
             var options = {
                 success : dosuccess
             };
@@ -96,8 +97,8 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
     <?php echo '</script'; ?>
 >
 
-    <div >
-    <table class="table"  >
+
+    <table class="table table-bordered"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
@@ -106,10 +107,20 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 ?>
-        <td >
+        <td id="tooltip1_<?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+" title="<?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+">
             <a href="javascript:void" style="color:#0000cc;"><?php echo $_smarty_tpl->tpl_vars['item']->value;?>
 </a>
         </td>
+        <?php echo '<script'; ?>
+>
+            $(function(){
+                fun.show_title('tooltip1_<?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+');
+            });
+        <?php echo '</script'; ?>
+>
         <?php } ?>
     </tr>
 
@@ -129,15 +140,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v
 $_smarty_tpl->tpl_vars['v']->_loop = true;
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['v']->key;
 ?>
-            <td class="tooltip" title="<?php echo $_smarty_tpl->tpl_vars['value']->value[$_smarty_tpl->tpl_vars['k']->value];?>
-" style="text-align:center; border:1px solid #ddd"><?php echo $_smarty_tpl->tpl_vars['value']->value[$_smarty_tpl->tpl_vars['k']->value];?>
+            <td  style="text-align:center; border:1px solid #ddd"><?php echo $_smarty_tpl->tpl_vars['value']->value[$_smarty_tpl->tpl_vars['k']->value];?>
  </td>
             <?php } ?>
         </tr>
         <?php } ?>
     </tbody>
     </table>
-    </div>
+
     <div id="pageSize" class="btn-group kpi-nav-one" data-toggle="buttons">
         <?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
@@ -177,7 +187,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
         $('#pane1').click(function(){
             $(this).animate({left:"500px"},3000);
         });
-        fun.show_title('tooltip');
+        fun.show_title('tooltip1');
     });
 <?php echo '</script'; ?>
 >

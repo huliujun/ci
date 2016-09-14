@@ -15,8 +15,10 @@ class Test extends CI_Controller {
     function index(){
         $this->load->model('test_model');
         $this->test_model->importData();
-        $this->tpl->assign($this->test_model->getData());
-        $this->tpl->display('test.tpl');
+        assign($this->test_model->getData());
+        display('test.tpl');
+        //$this->tpl->assign($this->test_model->getData());
+        //$this->tpl->display('test.tpl');
     }
 
 

@@ -39,7 +39,7 @@ class Test_model extends CI_Model{
         }
 
         if (isset($_POST['download']) && $_POST['download']) {
-            $this->exportData($title, $res, 'test_' . date('Y-m-d'), time());exit;
+            excel_export($title, $res, 'test_' . date('Y-m-d'), time());exit;
         }
         return [
             'data'=>$res,
@@ -54,7 +54,7 @@ class Test_model extends CI_Model{
 
             $arr = excel_get_array($_FILES,0,true);
             array_shift($arr);
-            var_dump($arr);die;
+              var_dump($arr);die;
 
             foreach($arr as $k=>$v)
             {
@@ -76,38 +76,6 @@ class Test_model extends CI_Model{
         }
 
 
-    }
-
-    /**
-     * 导出功能,导出格式为CSV,按照标准格式导出  浏览器输出
-     */
-    public function exportData($title,$data,$fname) {
-        $fname = $fname?$fname:time();
-        header("Content-Type: application/vnd.ms-execl;charset=gbk");
-        header("Content-Disposition: attachment; filename=".urlencode($fname).".xls");
-        header("Pragma: no-cache");
-        header("Expires: 0");
-        //组合标题
-        $str = '';
-        foreach($title as $key => $value){
-            if(isset($value['name'])){
-                $str .= $value['name']."\t";
-            }else{
-                $str .= $value."\t";
-            }
-
-        }
-        $str .= "\t\n";
-
-        //组合data
-        foreach ($data as $key=>$value){
-            foreach($title as $k => $v){
-                $str .= $value[$k]."\t";
-            }
-            $str .="\t\n";
-        }
-//        echo iconv("UTF-8","GBK//IGNORE",$str);
-        echo mb_convert_encoding($str, "gb2312", "UTF-8");
     }
 
     function getWhere(){

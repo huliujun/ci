@@ -3,19 +3,19 @@
 
     <form id="my_form" enctype="multipart/form-data" action="test" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="170000">
-        <input type="hidden" name="is_import" value="1">
+        <input type="hidden" name="is_import" value=0>
         <input name="myFile" type="file" id="up_load">
     </form>
 
-    <select id="select_table"  name="table" style="width:100px;height: 30px;" >
+    <select id="select_table"  name="table" >
         <{foreach from=$table item=v key=k}>
     <option value="<{$v}>" <{if "$v" eq $where.table}>selected<{/if}>><{$v}></option>
         <{/foreach}>
     </select>
     <input id="click_submit" type="button" name="213" value="确定">
     <script>
-        $('#click_submit').click(function () {
-            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+        $('#select_table').bind('change',function () {
+            $('#allpage').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/img/loading7.gif'></div>");
             $.post('/test/index',{
                 table:$('#select_table').val(),
             },function(data){
@@ -24,6 +24,7 @@
             });
         });
         $('#up_load').on('change',function () {
+            $('input[name=is_import]').val(1);
             var options = {
                 success : dosuccess
             };
@@ -52,15 +53,20 @@
         });
     </script>
 
-    <div >
-    <table class="table"  >
+
+    <table class="table table-bordered"  >
     <!--  table头加 排序 开始-->
     <thead >
     <tr>
         <{foreach from=$data.title item=item}>
-        <td >
+        <td id="tooltip1_<{$item}>" title="<{$item}>">
             <a href="javascript:void" style="color:#0000cc;"><{$item}></a>
         </td>
+        <script>
+            $(function(){
+                fun.show_title('tooltip1_<{$item}>');
+            });
+        </script>
         <{/foreach}>
     </tr>
 
@@ -70,13 +76,13 @@
     <{foreach from=$data.data item=value  }>
         <tr>
             <{foreach from=$data.title item=v key=k }>
-            <td class="tooltip" title="<{$value.$k}>" style="text-align:center; border:1px solid #ddd"><{$value.$k}> </td>
+            <td  style="text-align:center; border:1px solid #ddd"><{$value.$k}> </td>
             <{/foreach}>
         </tr>
         <{/foreach}>
     </tbody>
     </table>
-    </div>
+
     <div id="pageSize" class="btn-group kpi-nav-one" data-toggle="buttons">
         <{foreach from=$page item=v key=k}>
 
@@ -102,7 +108,7 @@
         $('#pane1').click(function(){
             $(this).animate({left:"500px"},3000);
         });
-        fun.show_title('tooltip');
+        fun.show_title('tooltip1');
     });
 </script>
 </div>

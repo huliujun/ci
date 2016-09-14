@@ -11,9 +11,9 @@
             $data = $this->home_model->getMenuFile();
             $parent_menu = $data['pm'];
             $child_menu = $data['cm'];
-            $this->tpl->assign("parent_menu",$parent_menu);
-            $this->tpl->assign("child_menu",$child_menu);
-            $this->tpl->display('home.tpl');
+            assign("parent_menu",$parent_menu);
+            assign("child_menu",$child_menu);
+            display('home.tpl');
         }
     }
     

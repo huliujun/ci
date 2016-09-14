@@ -2,12 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="/application/views/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
+    <!--link rel="stylesheet" type="text/css" href="/application/views/css/style.css" /-->
+
+    <script type="text/javascript" src="/application/views/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="/application/views/js/common.js"></script>
     <script type="text/javascript" src="/application/views/js/jquery.form.js"></script>
-    <!--link rel="stylesheet" type="text/css" href="/application/views/js/bootstrap.min.css" /-->
-    <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="/application/views/css/style.css" />
     <title>demo</title>
 </head>
 
@@ -28,7 +31,6 @@
                     $('#c_r_<{$i.id}>').click(function () {
                         $.post('<{$i.filepath}>',{
                         },function(data){
-                            console.log(123);
                             $('#ajaxnode').html(data);
                         });
                     });
@@ -50,13 +52,13 @@
     </script>
 </div>
 
-<div class="table-box" style="height: auto; width: 75%;">
+<div class="table-box">
 
     <div id="ajaxnode">
 
     </div>
     <script>
-        $('#ajaxnode').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+        $('#ajaxnode').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/img/loading7.gif'></div>");
         $.post('/test',{
         },function(data){
             $('#ajaxnode').html(data);

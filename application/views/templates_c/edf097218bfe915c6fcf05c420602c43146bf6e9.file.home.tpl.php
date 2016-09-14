@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-11 10:25:10
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-14 12:40:49
          compiled from "D:\wamp\www\test\application\views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1249757c21118b03234-67994412%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'edf097218bfe915c6fcf05c420602c43146bf6e9' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\home.tpl',
-      1 => 1473581202,
+      1 => 1473849646,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="/application/views/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
+    <!--link rel="stylesheet" type="text/css" href="/application/views/css/style.css" /-->
+
+    <?php echo '<script'; ?>
+ type="text/javascript" src="/application/views/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
     <?php echo '<script'; ?>
  type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"><?php echo '</script'; ?>
 >
@@ -39,9 +47,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php echo '<script'; ?>
  type="text/javascript" src="/application/views/js/jquery.form.js"><?php echo '</script'; ?>
 >
-    <!--link rel="stylesheet" type="text/css" href="/application/views/js/bootstrap.min.css" /-->
-    <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="/application/views/css/style.css" />
     <title>demo</title>
 </head>
 
@@ -82,7 +87,6 @@ $_smarty_tpl->tpl_vars['i']->_loop = true;
                         $.post('<?php echo $_smarty_tpl->tpl_vars['i']->value['filepath'];?>
 ',{
                         },function(data){
-                            console.log(123);
                             $('#ajaxnode').html(data);
                         });
                     });
@@ -107,14 +111,14 @@ $_smarty_tpl->tpl_vars['i']->_loop = true;
 >
 </div>
 
-<div class="table-box" style="height: auto; width: 75%;">
+<div class="table-box">
 
     <div id="ajaxnode">
 
     </div>
     <?php echo '<script'; ?>
 >
-        $('#ajaxnode').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/image/loading7.gif'></div>");
+        $('#ajaxnode').append("<div class='loading' style='width:100%;float: top;'><img style='margin-left:50%;margin-top:200px ;' src='/application/views/img/loading7.gif'></div>");
         $.post('/test',{
         },function(data){
             $('#ajaxnode').html(data);
