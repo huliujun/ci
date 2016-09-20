@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-14 12:40:49
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-09-16 22:51:17
          compiled from "D:\wamp\www\test\application\views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1249757c21118b03234-67994412%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'edf097218bfe915c6fcf05c420602c43146bf6e9' => 
     array (
       0 => 'D:\\wamp\\www\\test\\application\\views\\templates\\home.tpl',
-      1 => 1473849646,
+      1 => 1474059073,
       2 => 'file',
     ),
   ),
@@ -27,19 +27,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57c21118cbc921_24800089')) {function content_57c21118cbc921_24800089($_smarty_tpl) {?><!DOCTYPE >
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <link rel="stylesheet" type="text/css" href="/application/views/css/bootstrap.min.css" />
+    <meta charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/application/views/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
     <!--link rel="stylesheet" type="text/css" href="/application/views/css/style.css" /-->
 
     <?php echo '<script'; ?>
- type="text/javascript" src="/application/views/js/bootstrap.min.js"><?php echo '</script'; ?>
+ type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"><?php echo '</script'; ?>
+ type="text/javascript" src="/application/views/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  type="text/javascript" src="/application/views/js/common.js"><?php echo '</script'; ?>

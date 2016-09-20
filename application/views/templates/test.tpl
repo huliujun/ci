@@ -7,6 +7,19 @@
         <input name="myFile" type="file" id="up_load">
     </form>
 
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            选择表
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+        </ul>
+    </div>
+
     <select id="select_table"  name="table" >
         <{foreach from=$table item=v key=k}>
     <option value="<{$v}>" <{if "$v" eq $where.table}>selected<{/if}>><{$v}></option>
@@ -83,7 +96,18 @@
     </tbody>
     </table>
 
-    <div id="pageSize" class="btn-group kpi-nav-one" data-toggle="buttons">
+
+    <nav>
+        <ul class="pagination">
+
+            <li><a href="#">&laquo;</a></li>
+
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="pageSize" class="btn-group kpi-nav-one" data-toggle="">
         <{foreach from=$page item=v key=k}>
 
         <label class="btn btn-default <{if $where.page eq $v}>active<{/if}> " >

@@ -1,14 +1,15 @@
 <!DOCTYPE >
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <link rel="stylesheet" type="text/css" href="/application/views/css/bootstrap.min.css" />
+    <meta charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/application/views/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/application/views/css/mystyle.css" />
     <!--link rel="stylesheet" type="text/css" href="/application/views/css/style.css" /-->
 
-    <script type="text/javascript" src="/application/views/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/application/views/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/application/views/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/application/views/js/common.js"></script>
     <script type="text/javascript" src="/application/views/js/jquery.form.js"></script>
     <title>demo</title>

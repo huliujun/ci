@@ -32,6 +32,13 @@
     margin-top: 20px;
     width: 10%;
 }
+.menu-box table td {
+    text-align: center;
+    height: 40px;
+    margin-top: 20px;
+    width: 200px;
+}
+.selected{ background:#FF6500;color:#fff;}
 .table-box {
     float: left;
     margin-left: 20px;
