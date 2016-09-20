@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 $query_builder = true;
-$database = ['report','my_db','config','ci_db'];
+$database = ['report','my_db','config','ci_db','net_spider'];
 foreach ($database as $v){
 	$db[$v] = array(
 		'dsn'	=> '',
