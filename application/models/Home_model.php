@@ -13,7 +13,7 @@ class Home_model extends CI_Model{
     }
 
     function getMenuFile(){
-        $sql = 'select * from Menu ORDER BY `order`';
+        $sql = 'select * from menu ORDER BY `order`';
         $res = $this->db->query($sql)->result_array();
         
         foreach ($res as $k => $v) {
