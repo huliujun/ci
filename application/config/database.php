@@ -75,9 +75,9 @@ $database = ['report','my_db','config','ci_db','net_spider'];
 foreach ($database as $v){
 	$db[$v] = array(
 		'dsn'	=> '',
-		'hostname' => 'localhost',
+		'hostname' => '127.0.0.1',
 		'username' => 'root',
-		'password' => 'hljhlp',
+		'password' => 'Hulj@123456',
 		'database' => $v,
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
